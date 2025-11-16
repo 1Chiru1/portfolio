@@ -23,9 +23,9 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: myProfileApp  # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: 'portfolio'  # path to your web app project
-  NODE_VERSION: '20.x'  # Node.js version to use
+  AZURE_WEBAPP_NAME: myProfileApp
+  AZURE_WEBAPP_PACKAGE_PATH: '.'  # Set to '.' because we’ll flatten the artifact
+  NODE_VERSION: '20.x'
 
 permissions:
   contents: read
@@ -43,7 +43,7 @@ jobs:
         cache: 'npm'
 
     - name: npm install, build, and test
-      working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      working-directory: portfolio
       run: |
         npm install
         npm run build --if-present
@@ -53,7 +53,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: node-app
-        path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        path: portfolio  # Upload just the contents of the portfolio folder
 
   deploy:
     permissions:
@@ -69,6 +69,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: node-app
+        path: .  # Extract directly into the working directory
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
@@ -76,4 +77,4 @@ jobs:
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        package: .
