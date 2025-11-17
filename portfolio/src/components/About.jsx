@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 const skills = [
   { name: "Java", icon: "devicon-java-plain colored" },
   { name: "Spring Boot", icon: "devicon-spring-plain colored" },
@@ -24,59 +26,61 @@ const proficiencies = [
 ];
 
 function About() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.getElementById("about");
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
   return (
     <section id="about" className="about-section">
       <h2>What I Do?</h2>
       <div className="row align-items-center">
-        <div className="col-lg-6 col-md-12">
+        <div className={`col-lg-6 col-md-12 order-1 order-lg-1 animate-slide-left ${isVisible ? 'visible' : ''}`}>
           <img
             className="Programming"
             src={`${process.env.PUBLIC_URL}/image/Coding.svg`}
             alt="Programming"
           />
         </div>
-        <div className="col-lg-6 col-md-12">
-          <h1 class="Feature-Heading">Backend Developer</h1>
+        <div className={`col-lg-6 col-md-12 order-2 order-lg-2 animate-slide-right ${isVisible ? 'visible' : ''}`}>
+          <h2>Backend Developer</h2>
           <p>
-            As a Java developer, I leveraged my expertise in Java, Spring Boot,
-            microservices, Spring MVC, Neo4j, PostgreSQL (SQL), and Spring
-            Security (OAuth 2.0) to design, develop, and enhance our web
-            application.
+            As a Java developer, I specialize in building scalable microservices 
+            using Spring Boot, Neo4j, PostgreSQL, and Spring Security (OAuth 2.0). 
+            I design and develop robust web applications with a focus on performance 
+            and reliability.
           </p>
           <p>
-            I architected and implemented RESTful API interfaces between
-            multiple services, facilitating efficient data retrieval, creation,
-            updating, and deletion. These services were designed to handle
-            complex data processing while ensuring scalability and reliability.
+            I architect RESTful APIs that enable seamless data flow between services, 
+            and implement real-time data processing pipelines using Apache Kafka to 
+            optimize business workflows and enhance system efficiency.
           </p>
           <p>
-            Additionally, I built a robust real-time data processing pipeline
-            using Apache Kafka, optimizing business workflows and significantly
-            improving overall system performance and efficiency.
+            As an aspiring Full Stack Developer, I'm expanding my expertise in frontend 
+            technologies including HTML, CSS, JavaScript, React, and Node.js to deliver 
+            complete end-to-end solutions.
           </p>
-        </div>
-      </div>
-      <div className="row align-items-center">
-        <div className="col-lg-6 col-md-12">
-          <h1 class="Feature-Heading">Web Developer</h1>
-          <p>
-            I am learning to build fully responsive and dynamic website
-            frontends using HTML, CSS, NodeJS, and JavaScript, ensuring seamless
-            user experiences across devices.
-          </p>
-          <p>
-            While my current focus is on backend development, I am eager to
-            expand my skill set further. In the near future, I plan to dive
-            deeper into frameworks like Angular, React, NodeJS, and explore a
-            wide range of technologies to enhance my expertise.
-          </p>
-        </div>
-        <div className="col-lg-6 col-md-12">
-          <img
-            className="Programming"
-            src={`${process.env.PUBLIC_URL}/image/website.svg`}
-            alt="Programming"
-          />
         </div>
       </div>
       <div className="about-actions">

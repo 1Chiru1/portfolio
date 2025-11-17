@@ -1,10 +1,10 @@
 function Hero() {
   return (
     <section id="home" className="hero-section">
-      <h1>
-        Hello All! I'm Chiranjeevi <span className="wave">👋</span>
+      <h1 className="hero-title">
+        Hi All! I'm Chiranjeevi <span className="wave">👋</span>
       </h1>
-      <p>
+      <p className="hero-tagline">
         A passionate Java backend developer having 4 years of experience in
         telecom domain and OSS development. Learning Web Development to become
         Full Stack Developer which is my dream role.
@@ -12,9 +12,9 @@ function Hero() {
       <img
         src={`${process.env.PUBLIC_URL}/image/profile.png`}
         alt="Chiranjeevi N"
-        className="profile-pic"
+        className="profile-pic profile-pic-animated"
       />
-      <div className="social_media_icon">
+      <div className="social_media_icon social-icons-animated">
         <a
           className="btn"
           href="https://www.instagram.com/chiranjeevi_kashyap/"

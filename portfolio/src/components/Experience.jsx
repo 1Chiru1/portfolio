@@ -53,28 +53,24 @@ function Experience() {
             </div>
             <div className="col-lg-6 col-md-12 project-heading">
               <p>
-                As a Java backend developer for a British telecom client, I am
-                responsible for designing, developing, and transforming their
-                OSS inventory systems to enhance operational efficiency.
+                As a Java backend developer for a British telecom client, I design 
+                and develop OSS inventory systems that enhance operational efficiency 
+                across large-scale network operations.
               </p>
               <p>
-                My work includes building OSS infrastructure applications such
-                as Plan and Build, network planning tools, and a catalogue
-                template builder, ensuring seamless functionality for
-                large-scale telecom operations.
+                I build critical infrastructure applications including Plan and Build 
+                tools, network planning systems, and catalogue template builders, 
+                ensuring seamless functionality and scalability.
               </p>
               <p>
-                I actively collaborate with developers, testers, designers, and
-                ASG teams to identify and resolve issues found during both the
-                development phase and live operations. I develop solutions,
-                perform unit tests, and oversee deployments to ensure stability
-                and accuracy.
+                I collaborate closely with cross-functional teams to identify and resolve 
+                issues throughout the development lifecycle, from design to production 
+                deployment, ensuring stability and high-quality deliverables.
               </p>
               <p>
-                To further optimize application performance and reliability, I
-                leverage code quality tools like SonarQube to improve code
-                coverage and write comprehensive test cases using JUnit,
-                ensuring that enhancements meet high-quality standards.
+                Using tools like SonarQube and JUnit, I maintain rigorous code quality 
+                standards and comprehensive test coverage to optimize application 
+                performance and reliability.
               </p>
             </div>
           </div>
