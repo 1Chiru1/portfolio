@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section id="hero" className="hero-section">
+    <section id="home" className="hero-section">
       <h1>
         Hello All! I'm Chiranjeevi <span className="wave">👋</span>
       </h1>
@@ -10,7 +10,7 @@ function Hero() {
         Full Stack Developer which is my dream role.
       </p>
       <img
-        src="image/profile.png"
+        src={`${process.env.PUBLIC_URL}/image/profile.png`}
         alt="Chiranjeevi N"
         className="profile-pic"
       />

@@ -1,3 +1,28 @@
+const skills = [
+  { name: "Java", icon: "devicon-java-plain colored" },
+  { name: "Spring Boot", icon: "devicon-spring-plain colored" },
+  { name: "Kafka", icon: "devicon-apachekafka-original colored" },
+  { name: "RESTful APIs", icon: "fas fa-server" },
+  { name: "Postgres", icon: "devicon-postgresql-plain colored" },
+  { name: "Neo4j", icon: "devicon-neo4j-plain colored" },
+  { name: "HTML5", icon: "devicon-html5-plain colored" },
+  { name: "CSS3", icon: "devicon-css3-plain colored" },
+  { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+  { name: "React", icon: "devicon-react-original colored" },
+  { name: "Maven", icon: "devicon-maven-plain colored" },
+  { name: "Gradle", icon: "devicon-gradle-plain colored" },
+  { name: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
+  { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
+  { name: "Git", icon: "devicon-git-plain colored" },
+  { name: "Jira", icon: "devicon-jira-plain colored" },
+];
+
+const proficiencies = [
+  { category: "Frontend", percentage: 35 },
+  { category: "Backend", percentage: 80 },
+  { category: "Programming", percentage: 70 },
+];
+
 function About() {
   return (
     <section id="about" className="about-section">
@@ -6,7 +31,7 @@ function About() {
         <div className="col-lg-6 col-md-12">
           <img
             className="Programming"
-            src="/image/Coding.svg"
+            src={`${process.env.PUBLIC_URL}/image/Coding.svg`}
             alt="Programming"
           />
         </div>
@@ -49,7 +74,7 @@ function About() {
         <div className="col-lg-6 col-md-12">
           <img
             className="Programming"
-            src="/image/website.svg"
+            src={`${process.env.PUBLIC_URL}/image/website.svg`}
             alt="Programming"
           />
         </div>
@@ -73,22 +98,41 @@ function About() {
       </div>
       <h2>Skills</h2>
       <ul className="skills-list">
-        <li>Java</li>
-        <li>Spring Boot</li>
-        <li>Kafka</li>
-        <li>RESTful APIs</li>
-        <li>Postgres</li>
-        <li>Neo4j</li>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript (ES6+)</li>
-        <li>React</li>
-        <li>Maven</li>
-        <li>Kubernetes</li>
-        <li>Jenkins</li>
-        <li>Git</li>
-        <li>Agile JIRA</li>
+        {skills.map((skill, index) => (
+          <li key={index}>
+            <i className={skill.icon}></i>
+            <span>{skill.name}</span>
+          </li>
+        ))}
       </ul>
+
+      <h2>Proficiency</h2>
+      <div className="proficiency-section">
+        {proficiencies.map((prof, index) => (
+          <div key={index} className="proficiency-item">
+            <div className="proficiency-header">
+              <span className="proficiency-label">{prof.category}</span>
+            </div>
+            <div className="proficiency-bar">
+              <div
+                className="proficiency-fill"
+                style={{ width: `${prof.percentage}%` }}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Education</h2>
+      <div className="education-section">
+        <div className="education-item">
+          <h3 className="education-degree">
+            Bachelor of Engineering in Mechanical Engineering
+          </h3>
+          <p className="education-school">ATME College of Engineering</p>
+          <p className="education-year">2016 - 2020</p>
+        </div>
+      </div>
     </section>
   );
 }

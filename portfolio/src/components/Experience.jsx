@@ -2,37 +2,37 @@ const certificates = [
   {
     name: "Infosys Certified Java SE8 Developer",
     issuer: "Infosys",
-    img: "/image/infosys.jpeg",
+    img: `${process.env.PUBLIC_URL}/image/infosys.jpeg`,
     link: "https://1chiru1.github.io/myProfile/Experience.html",
   },
   {
     name: "Java Basic",
     issuer: "HackerRank",
-    img: "/image/java.jpeg",
+    img: `${process.env.PUBLIC_URL}/image/java.jpeg`,
     link: "https://www.hackerrank.com/certificates/7237435b74fd",
   },
   {
     name: "Python Basic",
     issuer: "HackerRank",
-    img: "/image/python.jpeg",
+    img: `${process.env.PUBLIC_URL}/image/python.jpeg`,
     link: "https://www.hackerrank.com/certificates/cc1a125837ec",
   },
   {
     name: "SQL Advanced",
     issuer: "HackerRank",
-    img: "/image/sql.jpeg",
+    img: `${process.env.PUBLIC_URL}/image/sql.jpeg`,
     link: "https://www.hackerrank.com/certificates/ec606aa5fb9b",
   },
   {
     name: "Neo4j Certified Professional",
     issuer: "Neo4j",
-    img: "/image/neo4j.png",
+    img: `${process.env.PUBLIC_URL}/image/neo4j.png`,
     link: "https://graphacademy.neo4j.com/c/e8b71dfb-2ae5-4f43-ba70-5ce237af2c53/",
   },
   {
     name: "Learn JavaScript",
     issuer: "CodeChef",
-    img: "/image/CodeChef.png",
+    img: `${process.env.PUBLIC_URL}/image/CodeChef.png`,
     link: "https://www.codechef.com/certificates/public/e4aa142",
   },
 ];
@@ -47,7 +47,7 @@ function Experience() {
             <div className="col-lg-6 col-md-12">
               <img
                 className="Programming"
-                src="/image/Programming.svg"
+                src={`${process.env.PUBLIC_URL}/image/Programming.svg`}
                 alt="Programming"
               />
             </div>
