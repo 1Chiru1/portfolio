@@ -3,7 +3,7 @@ function Contact() {
     <section id="contact" className="contact-section">
       <h2>Contact Me</h2>
       <p>
-       Let's connect if your're looking for someone who can help bring your ideas to life through collaboration.
+        Let's connect and bring your ideas to life through collaboration.
       </p>
       <p>
         Email:{" "}

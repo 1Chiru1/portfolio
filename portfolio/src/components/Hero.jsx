@@ -5,9 +5,8 @@ function Hero() {
         Hi All! I'm Chiranjeevi <span className="wave">👋</span>
       </h1>
       <p className="hero-tagline">
-        A passionate Java backend developer having 4 years of experience in
-        telecom domain and OSS development. Learning Web Development to become
-        Full Stack Developer which is my dream role.
+        A passionate Java backend developer with 4 years of experience in telecom 
+        and OSS development. Aspiring Full Stack Developer expanding into frontend technologies.
       </p>
       <img
         src={`${process.env.PUBLIC_URL}/image/profile.png`}

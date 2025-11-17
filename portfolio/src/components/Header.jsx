@@ -45,16 +45,31 @@ function Header() {
         showHeader ? "header-visible" : "header-hidden"
       }`}
     >
-      <button className={`hamburger-menu ${menuOpen ? "open" : ""}`} onClick={toggleMenu} aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div className="header-content">
+        <h1 className="header-title">Chiru's Code Lab 🚀</h1>
+        <button
+          className={`hamburger-menu ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
       <nav className={menuOpen ? "nav-open" : ""}>
-        <a href="#home" onClick={closeMenu}>Home</a>
-        <a href="#about" onClick={closeMenu}>About</a>
-        <a href="#experience" onClick={closeMenu}>Work Experience</a>
-        <a href="#contact" onClick={closeMenu}>Contact Me</a>
+        <a href="#home" onClick={closeMenu}>
+          Home
+        </a>
+        <a href="#about" onClick={closeMenu}>
+          About
+        </a>
+        <a href="#experience" onClick={closeMenu}>
+          Work Experience
+        </a>
+        <a href="#contact" onClick={closeMenu}>
+          Contact Me
+        </a>
       </nav>
     </header>
   );
