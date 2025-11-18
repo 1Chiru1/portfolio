@@ -849,6 +849,12 @@ section:last-of-type {
   .contact-section h2 {
     font-size: 1.6rem;
   }
+
+  .certificate-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+    gap: 15px;
+  }
 }
 
 .certificate-text.issuer {
@@ -914,6 +920,8 @@ section:last-of-type {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 1.5rem;
+  padding: 0;
+  width: 100%;
 }
 .experience-page {
   padding-top: 2rem;
