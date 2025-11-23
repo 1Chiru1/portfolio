@@ -35,6 +35,12 @@ const certificates = [
     img: `${process.env.PUBLIC_URL}/image/CodeChef.png`,
     link: "https://www.codechef.com/certificates/public/e4aa142",
   },
+  {
+    name: "Learn React JS for Front-end development",
+    issuer: "CodeChef",
+    img: `${process.env.PUBLIC_URL}/image/CodeChef.png`,
+    link: "https://www.codechef.com/certificates/public/cb92e5e",
+  }
 ];
 
 function Experience() {
@@ -53,24 +59,25 @@ function Experience() {
             </div>
             <div className="col-lg-6 col-md-12 project-heading">
               <p>
-                As a Java backend developer for a British telecom client, I design 
-                and develop OSS inventory systems that enhance operational efficiency 
-                across large-scale network operations.
+                As a Java backend developer for a British telecom client, I
+                design and develop OSS inventory systems that enhance
+                operational efficiency across large-scale network operations.
               </p>
               <p>
-                I build critical infrastructure applications including Plan and Build 
-                tools, network planning systems, and catalogue template builders, 
-                ensuring seamless functionality and scalability.
+                I build critical infrastructure applications including Plan and
+                Build tools, network planning systems, and catalogue template
+                builders, ensuring seamless functionality and scalability.
               </p>
               <p>
-                I collaborate closely with cross-functional teams to identify and resolve 
-                issues throughout the development lifecycle, from design to production 
-                deployment, ensuring stability and high-quality deliverables.
+                I collaborate closely with cross-functional teams to identify
+                and resolve issues throughout the development lifecycle, from
+                design to production deployment, ensuring stability and
+                high-quality deliverables.
               </p>
               <p>
-                Using tools like SonarQube and JUnit, I maintain rigorous code quality 
-                standards and comprehensive test coverage to optimize application 
-                performance and reliability.
+                Using tools like SonarQube and JUnit, I maintain rigorous code
+                quality standards and comprehensive test coverage to optimize
+                application performance and reliability.
               </p>
             </div>
           </div>
