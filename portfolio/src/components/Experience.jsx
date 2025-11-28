@@ -40,7 +40,7 @@ const certificates = [
     issuer: "CodeChef",
     img: `${process.env.PUBLIC_URL}/image/CodeChef.png`,
     link: "https://www.codechef.com/certificates/public/cb92e5e",
-  }
+  },
 ];
 
 function Experience() {
@@ -48,81 +48,108 @@ function Experience() {
     <section id="experience" className="experience-section">
       <main className="experience-page">
         <section id="Section1" className="container">
-          <h2>Experience</h2>
-          <div className="row">
-            <div className="col-lg-6 col-md-12">
-              <img
-                className="Programming"
-                src={`${process.env.PUBLIC_URL}/image/Programming.svg`}
-                alt="Programming"
-              />
-            </div>
-            <div className="col-lg-6 col-md-12 project-heading">
-              <p>
-                As a Java backend developer for a British telecom client, I
-                design and develop OSS inventory systems that enhance
-                operational efficiency across large-scale network operations.
-              </p>
-              <p>
-                I build critical infrastructure applications including Plan and
-                Build tools, network planning systems, and catalogue template
-                builders, ensuring seamless functionality and scalability.
-              </p>
-              <p>
-                I collaborate closely with cross-functional teams to identify
-                and resolve issues throughout the development lifecycle, from
-                design to production deployment, ensuring stability and
-                high-quality deliverables.
-              </p>
-              <p>
-                Using tools like SonarQube and JUnit, I maintain rigorous code
-                quality standards and comprehensive test coverage to optimize
-                application performance and reliability.
-              </p>
+          <h2>
+            <i className="fas fa-briefcase"></i> Professional Experience
+          </h2>
+          <div className="experience-content">
+            <div className="experience-timeline">
+              <div className="timeline-item">
+                <div className="timeline-icon">
+                  <i className="fas fa-code"></i>
+                </div>
+                <div className="timeline-content">
+                  <h3>Java Backend Developer</h3>
+                  <p className="timeline-company">
+                    <i className="fas fa-building"></i>Infosys - British Telecom
+                    Client
+                  </p>
+                  <p>
+                    Design and develop OSS inventory systems that enhance
+                    operational efficiency across large-scale network
+                    operations.
+                  </p>
+                </div>
+              </div>
+
+              <div className="timeline-item">
+                <div className="timeline-icon">
+                  <i className="fas fa-tools"></i>
+                </div>
+                <div className="timeline-content">
+                  <h3>Infrastructure Development</h3>
+                  <p>
+                    Build critical infrastructure applications including Plan
+                    and Build tools, network planning systems, and catalogue
+                    template builders, ensuring seamless functionality and
+                    scalability.
+                  </p>
+                </div>
+              </div>
+
+              <div className="timeline-item">
+                <div className="timeline-icon">
+                  <i className="fas fa-users"></i>
+                </div>
+                <div className="timeline-content">
+                  <h3>Cross-Functional Collaboration</h3>
+                  <p>
+                    Collaborate closely with cross-functional teams to identify
+                    and resolve issues throughout the development lifecycle,
+                    from design to production deployment, ensuring stability and
+                    high-quality deliverables.
+                  </p>
+                </div>
+              </div>
+
+              <div className="timeline-item">
+                <div className="timeline-icon">
+                  <i className="fas fa-check-circle"></i>
+                </div>
+                <div className="timeline-content">
+                  <h3>Quality Assurance</h3>
+                  <p>
+                    Using tools like SonarQube and JUnit, I maintain rigorous
+                    code quality standards and comprehensive test coverage to
+                    optimize application performance and reliability.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="section2">
+        <section id="section2" className="certifications-section">
           <div className="Heading">
-            <h2>Achievements and Certifications</h2>
+            <h2>
+              <i className="fas fa-award"></i> Achievements & Certifications
+            </h2>
           </div>
           <div className="certificate-grid">
             {certificates.map((cert, idx) => (
-              <div key={cert.name + idx} className="card mb-4 box-shadow">
-                <div className="certificate-card-flex">
-                  <div className="certificate-img-col">
-                    <img
-                      src={cert.img}
-                      alt={cert.issuer}
-                      style={{
-                        width: "100%",
-                        maxWidth: 150,
-                        height: "auto",
-                        objectFit: "contain",
-                        borderRadius: 6,
-                        display: "block",
-                        margin: "0 auto",
-                      }}
-                    />
-                  </div>
-                  <div className="certificate-name-issuer-col">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={cert.link}
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      <p className="card-text certificate-text mb-1">
-                        {cert.name}
-                      </p>
-                    </a>
-                    <p className="certificate-text issuer">
-                      - by {cert.issuer}
-                    </p>
-                  </div>
+              <a
+                key={cert.name + idx}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="certificate-card"
+              >
+                <div className="certificate-badge">
+                  <i className="fas fa-certificate"></i>
                 </div>
-              </div>
+                <div className="certificate-image">
+                  <img src={cert.img} alt={cert.issuer} />
+                </div>
+                <div className="certificate-details">
+                  <h3>{cert.name}</h3>
+                  <p className="certificate-issuer">
+                    <i className="fas fa-building"></i> {cert.issuer}
+                  </p>
+                  <span className="certificate-view">
+                    View Certificate{" "}
+                    <i className="fas fa-external-link-alt"></i>
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </section>

@@ -25,8 +25,16 @@ const proficiencies = [
   { category: "Programming", percentage: 70 },
 ];
 
+const techHighlights = [
+  { icon: "fas fa-server", label: "Microservices Architecture" },
+  { icon: "fas fa-database", label: "Database Design" },
+  { icon: "fas fa-stream", label: "Real-time Processing" },
+  { icon: "fas fa-lock", label: "Security & OAuth" },
+];
+
 function About() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isProficiencyVisible, setIsProficiencyVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,35 +60,83 @@ function About() {
     };
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsProficiencyVisible(true);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const proficiencySection = document.querySelector(".proficiency-section");
+    if (proficiencySection) {
+      observer.observe(proficiencySection);
+    }
+
+    return () => {
+      if (proficiencySection) {
+        observer.unobserve(proficiencySection);
+      }
+    };
+  }, []);
+
   return (
     <section id="about" className="about-section">
-      <h2>What I Do?</h2>
+      <h2>
+        <i className="fas fa-code"></i> What I Do?
+      </h2>
       <div className="row align-items-center">
-        <div className={`col-lg-6 col-md-12 order-1 order-lg-1 animate-slide-left ${isVisible ? 'visible' : ''}`}>
+        <div
+          className={`col-lg-6 col-md-12 order-1 order-lg-1 animate-slide-left ${
+            isVisible ? "visible" : ""
+          }`}
+        >
           <img
             className="Programming"
             src={`${process.env.PUBLIC_URL}/image/Coding.svg`}
             alt="Programming"
           />
         </div>
-        <div className={`col-lg-6 col-md-12 order-2 order-lg-2 animate-slide-right ${isVisible ? 'visible' : ''}`}>
-          <h2>Backend Developer</h2>
+        <div
+          className={`col-lg-6 col-md-12 order-2 order-lg-2 animate-slide-right ${
+            isVisible ? "visible" : ""
+          }`}
+        >
+          <h3 className="role-title">
+            <i className="fas fa-laptop-code"></i> Backend Developer
+          </h3>
           <p>
-            As a Java developer, I specialize in building scalable microservices 
-            using Spring Boot, Neo4j, PostgreSQL, and Spring Security (OAuth 2.0). 
-            I design and develop robust web applications with a focus on performance 
-            and reliability.
+            As a Java developer, I specialize in building scalable microservices
+            using <strong>Spring Boot</strong>, <strong>Neo4j</strong>,{" "}
+            <strong>PostgreSQL</strong>, and{" "}
+            <strong>Spring Security (OAuth 2.0)</strong>. I design and develop
+            robust web applications with a focus on performance and reliability.
           </p>
           <p>
-            I architect RESTful APIs that enable seamless data flow between services, 
-            and implement real-time data processing pipelines using Apache Kafka to 
-            optimize business workflows and enhance system efficiency.
+            I architect <strong>RESTful APIs</strong> that enable seamless data
+            flow between services, and implement real-time data processing
+            pipelines using <strong>Apache Kafka</strong> to optimize business
+            workflows and enhance system efficiency.
           </p>
           <p>
-            As an aspiring Full Stack Developer, I'm expanding my expertise in frontend 
-            technologies including HTML, CSS, JavaScript, React, and Node.js to deliver 
-            complete end-to-end solutions.
+            As an aspiring <strong>Full Stack Developer</strong>, I'm expanding
+            my expertise in frontend technologies including{" "}
+            <strong>HTML, CSS, JavaScript, React, and Node.js</strong> to
+            deliver complete end-to-end solutions.
           </p>
+
+          <div className="tech-highlights">
+            {techHighlights.map((tech, index) => (
+              <div key={index} className="tech-box">
+                <i className={tech.icon}></i>
+                <span>{tech.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="about-actions">
@@ -97,10 +153,12 @@ function About() {
           rel="noopener noreferrer"
           className="btn btn-primary"
         >
-          SEE MY RESUME
+          HERE IS MY CV
         </a>
       </div>
-      <h2>Skills</h2>
+      <h2>
+        <i className="fas fa-tools"></i> Skills
+      </h2>
       <ul className="skills-list">
         {skills.map((skill, index) => (
           <li key={index}>
@@ -110,7 +168,9 @@ function About() {
         ))}
       </ul>
 
-      <h2>Proficiency</h2>
+      <h2>
+        <i className="fas fa-chart-line"></i> Proficiency
+      </h2>
       <div className="proficiency-section">
         {proficiencies.map((prof, index) => (
           <div key={index} className="proficiency-item">
@@ -119,22 +179,44 @@ function About() {
             </div>
             <div className="proficiency-bar">
               <div
-                className="proficiency-fill"
-                style={{ width: `${prof.percentage}%` }}
+                className={`proficiency-fill ${
+                  isProficiencyVisible ? "animate" : ""
+                }`}
+                style={{
+                  width: isProficiencyVisible ? `${prof.percentage}%` : "0%",
+                }}
               ></div>
             </div>
           </div>
         ))}
       </div>
 
-      <h2>Education</h2>
+      <h2>
+        <i className="fas fa-graduation-cap"></i> Education
+      </h2>
       <div className="education-section">
         <div className="education-item">
-          <h3 className="education-degree">
-            Bachelor of Engineering in Mechanical Engineering
-          </h3>
-          <p className="education-school">ATME College of Engineering</p>
-          <p className="education-year">2016 - 2020</p>
+          <div className="education-icon">
+            <i className="fas fa-university"></i>
+          </div>
+          <div className="education-content">
+            <h3 className="education-degree">
+              <i className="fas fa-certificate"></i> Bachelor of Engineering
+            </h3>
+            <p className="education-major">Mechanical Engineering</p>
+            <p className="education-school">
+              <i className="fas fa-map-marker-alt"></i> ATME College of
+              Engineering
+            </p>
+            <p className="education-year">
+              <i className="far fa-calendar-alt"></i> 2016 - 2020
+            </p>
+            <div className="education-highlights">
+              <span className="highlight-badge">
+                <i className="fas fa-star"></i> Engineering Graduate
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
