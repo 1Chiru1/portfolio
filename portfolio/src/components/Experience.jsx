@@ -3,7 +3,7 @@ const certificates = [
     name: "Infosys Certified Java SE8 Developer",
     issuer: "Infosys",
     img: `${process.env.PUBLIC_URL}/image/infosys.jpeg`,
-    link: "https://1chiru1.github.io/myProfile/Experience.html",
+    link: null,
   },
   {
     name: "Java Basic",
@@ -125,7 +125,8 @@ function Experience() {
             </h2>
           </div>
           <div className="certificate-grid">
-            {certificates.map((cert, idx) => (
+            {certificates.map((cert, idx) => 
+              cert.link ? (
               <a
                 key={cert.name + idx}
                 href={cert.link}
@@ -150,7 +151,32 @@ function Experience() {
                   </span>
                 </div>
               </a>
-            ))}
+            ) : (
+              <div
+                key={cert.name + idx}
+                className="certificate-card"
+                style={{ cursor: 'default', opacity: 0.9 }}
+                title="Certificate link not available"
+              >
+                <div className="certificate-badge">
+                  <i className="fas fa-certificate"></i>
+                </div>
+                <div className="certificate-image">
+                  <img src={cert.img} alt={cert.issuer} />
+                </div>
+                <div className="certificate-details">
+                  <h3>{cert.name}</h3>
+                  <p className="certificate-issuer">
+                    <i className="fas fa-building"></i> {cert.issuer}
+                  </p>
+                  <span className="certificate-view" style={{ opacity: 0.6 }}>
+                    Certificate Available{" "}
+                    <i className="fas fa-check-circle"></i>
+                  </span>
+                </div>
+              </div>
+            )
+            )}
           </div>
         </section>
       </main>
