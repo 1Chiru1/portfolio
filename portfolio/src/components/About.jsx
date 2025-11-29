@@ -148,7 +148,7 @@ function About() {
           CONTACT ME
         </a>
         <a
-          href="/Resume.pdf"
+           href={`${process.env.PUBLIC_URL}/Resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary"

@@ -30,8 +30,8 @@ function Contact() {
     <section id="contact" className="contact-section">
       <h2>Let's Connect!</h2>
       <p className="contact-intro">
-        I'm always open to discussing new projects, creative ideas, or
-        opportunities to be part of your vision.
+        Let's collaborate on exciting projects! Whether you have an idea to bring to life 
+        or an opportunity to explore, I'd love to hear from you.
       </p>
 
       <div className="contact-cards">
@@ -55,6 +55,15 @@ function Contact() {
             </span>
           </a>
         ))}
+      </div>
+
+      <div className="contact-navigation">
+        <p className="nav-signature">Chiranjeevi N Kashyap</p>
+        <div className="nav-links">
+          <a href="#home" className="nav-link">Home</a>
+          <a href="#about" className="nav-link">About</a>
+          <a href="#experience" className="nav-link">Experience</a>
+        </div>
       </div>
     </section>
   );
