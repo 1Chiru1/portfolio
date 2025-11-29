@@ -39,9 +39,9 @@ function Hero() {
         <i className="fas fa-layer-group"></i> Full Stack Enthusiast
       </div>
       <p className="hero-tagline">
-        A passionate Java backend developer with 4 years of experience in
-        telecom and OSS development. Aspiring Full Stack Developer expanding
-        into frontend technologies.
+        Java developer who loves crafting clean code and building cool stuff! 
+        With 4+ years turning ideas into reality in telecom, now exploring the 
+        exciting world of full-stack development. Let's create something amazing together! ✨
       </p>
 
       <img
@@ -64,7 +64,7 @@ function Hero() {
           <i className="fas fa-envelope"></i> Get In Touch
         </a>
         <a
-          href="/Resume.pdf"
+           href={`${process.env.PUBLIC_URL}/Resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="cta-button cta-secondary"
