@@ -17,6 +17,7 @@ const skills = [
   { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
   { name: "Git", icon: "devicon-git-plain colored" },
   { name: "Jira", icon: "devicon-jira-plain colored" },
+  { name: "Amazon Q", icon: "fas fa-cloud" },
 ];
 
 const proficiencies = [
@@ -148,7 +149,7 @@ function About() {
           CONTACT ME
         </a>
         <a
-           href={`${process.env.PUBLIC_URL}/Resume.pdf`}
+          href={`${process.env.PUBLIC_URL}/Resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary"
