@@ -26,6 +26,18 @@ const contactCards = [
 ];
 
 function Contact() {
+  const handleNavClick = (e, target) => {
+    e.preventDefault();
+    const element = document.getElementById(target);
+    if (element) {
+      const offsetTop = target === 'home' ? 0 : element.offsetTop - 60;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section id="contact" className="contact-section">
       <h2>Let's Connect!</h2>
@@ -60,9 +72,9 @@ function Contact() {
       <div className="contact-navigation">
         <p className="nav-signature">Chiranjeevi N Kashyap</p>
         <div className="nav-links">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#experience" className="nav-link">Experience</a>
+          <a href="#home" className="nav-link" onClick={(e) => handleNavClick(e, 'home')}>Home</a>
+          <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, 'about')}>About</a>
+          <a href="#experience" className="nav-link" onClick={(e) => handleNavClick(e, 'experience')}>Experience</a>
         </div>
       </div>
     </section>

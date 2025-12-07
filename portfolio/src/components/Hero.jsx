@@ -31,7 +31,7 @@ function Hero() {
   return (
     <section id="home" className="hero-section">
       <h1 className="hero-title">
-        Chiranjeevi <span className="wave">👋</span>
+        Hey, I'm Chiranjeevi <span className="wave">👋</span>
       </h1>
       <div className="hero-subtitle">
         <i className="fas fa-laptop-code"></i> Backend Developer{" "}
@@ -40,7 +40,7 @@ function Hero() {
       </div>
       <p className="hero-tagline">
         Java developer who loves crafting clean code and building cool stuff! 
-        With 4+ years turning ideas into reality in telecom, now exploring the 
+        With 5 years turning ideas into reality in telecom, now exploring the 
         exciting world of full-stack development. Let's create something amazing together! ✨
       </p>
 
