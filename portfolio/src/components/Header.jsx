@@ -90,9 +90,13 @@ function Header() {
     >
       <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
       <div className="header-content">
-        <div className="logo-signature" onClick={handleRefresh} title="Refresh">
-          CNK
-        </div>
+        <img 
+          src={`${process.env.PUBLIC_URL}/image/CNKLogo.jpg`} 
+          alt="CNK Logo" 
+          className="logo-signature"
+          onClick={handleRefresh}
+          title="Refresh"
+        />
         <h1 className="header-title">Chiru's Code Lab 🚀</h1>
         <nav className={menuOpen ? "nav-open" : ""}>
           <a 
