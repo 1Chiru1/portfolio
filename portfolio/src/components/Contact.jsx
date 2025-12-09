@@ -42,11 +42,6 @@ function Contact() {
     <section id="contact" className="contact-section">
       <div className="contact-header">
         <h2>Let's Connect!</h2>
-        <img 
-          src={`${process.env.PUBLIC_URL}/image/CNKLogo.jpg`} 
-          alt="CNK Logo" 
-          className="contact-logo"
-        />
       </div>
       <p className="contact-intro">
         Let's collaborate on exciting projects! Whether you have an idea to bring to life 

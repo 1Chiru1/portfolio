@@ -7,6 +7,8 @@ const skills = [
   { name: "RESTful APIs", icon: "fas fa-server" },
   { name: "Postgres", icon: "devicon-postgresql-plain colored" },
   { name: "Neo4j", icon: "devicon-neo4j-plain colored" },
+  { name: "Azure", icon: "devicon-azure-plain colored" },
+  { name: "JUnit", icon: "devicon-junit-plain colored" },
   { name: "HTML5", icon: "devicon-html5-plain colored" },
   { name: "CSS3", icon: "devicon-css3-plain colored" },
   { name: "JavaScript", icon: "devicon-javascript-plain colored" },
