@@ -66,19 +66,19 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <div ref={el => sectionsRef.current[0] = el} className="fade-in-section">
+        <div id="home" ref={el => sectionsRef.current[0] = el} className="fade-in-section">
           <Hero />
         </div>
-        <div ref={el => sectionsRef.current[1] = el} className="fade-in-section">
+        <div id="about" ref={el => sectionsRef.current[1] = el} className="fade-in-section">
           <About />
         </div>
-        <div ref={el => sectionsRef.current[2] = el} className="fade-in-section">
+        <div id="experience" ref={el => sectionsRef.current[2] = el} className="fade-in-section">
           <Experience />
         </div>
-        <div ref={el => sectionsRef.current[3] = el} className="fade-in-section">
+        <div id="hobbies" ref={el => sectionsRef.current[3] = el} className="fade-in-section">
           <Hobbies />
         </div>
-        <div ref={el => sectionsRef.current[4] = el} className="fade-in-section">
+        <div id="contact" ref={el => sectionsRef.current[4] = el} className="fade-in-section">
           <Contact />
         </div>
       </main>
