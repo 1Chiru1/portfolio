@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,6 +9,7 @@ import "./App.css";
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const sectionsRef = useRef([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,37 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+        }
+      });
+    }, observerOptions);
+
+    const sections = sectionsRef.current;
+
+    sections.forEach(section => {
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sections.forEach(section => {
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -34,11 +66,21 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Hobbies />
-        <Contact />
+        <div ref={el => sectionsRef.current[0] = el} className="fade-in-section">
+          <Hero />
+        </div>
+        <div ref={el => sectionsRef.current[1] = el} className="fade-in-section">
+          <About />
+        </div>
+        <div ref={el => sectionsRef.current[2] = el} className="fade-in-section">
+          <Experience />
+        </div>
+        <div ref={el => sectionsRef.current[3] = el} className="fade-in-section">
+          <Hobbies />
+        </div>
+        <div ref={el => sectionsRef.current[4] = el} className="fade-in-section">
+          <Contact />
+        </div>
       </main>
       {showScrollTop && (
         <button

@@ -60,8 +60,7 @@ function Experience() {
                 <div className="timeline-content">
                   <h3>Java Backend Developer</h3>
                   <p className="timeline-company">
-                    <i className="fas fa-building"></i>Infosys - British Telecom
-                    Client
+                    <i className="fas fa-building"></i>Infosys
                   </p>
                   <p>
                     Design and develop OSS inventory systems that enhance

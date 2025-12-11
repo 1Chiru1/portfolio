@@ -44,11 +44,7 @@ function Hero() {
         exciting world of full-stack development. Let's create something amazing together! ✨
       </p>
 
-      <img
-        src={`${process.env.PUBLIC_URL}/image/profile.png`}
-        alt="Chiranjeevi N"
-        className="profile-pic profile-pic-animated"
-      />
+
 
       <div className="hero-stats">
         {stats.map((stat, index) => (
