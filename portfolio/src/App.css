@@ -1856,6 +1856,8 @@ section:last-of-type {
     width: 40px;
     height: 40px;
     font-size: 1rem;
+    pointer-events: none;
+    opacity: 0.5;
   }
 
   .hobbies-grid {
@@ -1999,6 +2001,8 @@ section:last-of-type {
     height: 38px;
     font-size: 1.3rem;
     background: transparent;
+    pointer-events: none;
+    opacity: 0.5;
   }
 
   .contact-cards {
@@ -2031,29 +2035,102 @@ section:last-of-type {
   }
 
   .experience-timeline::before {
-    left: 20px;
+    display: none;
+  }
+
+  .experience-content {
+    position: relative;
+  }
+
+  .experience-content::after {
+    content: '← Swipe to explore →';
+    display: block;
+    text-align: center;
+    color: #007bff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 20px;
+    animation: swipeHint 2s ease-in-out infinite;
+  }
+
+  @keyframes swipeHint {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .experience-timeline {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .experience-timeline::-webkit-scrollbar {
+    display: none;
   }
 
   .timeline-item {
-    padding-left: 60px;
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: center;
   }
 
   .timeline-icon {
-    left: 5px;
-    width: 32px;
-    height: 32px;
+    position: relative;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
   }
 
   .timeline-icon i {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
 
   .timeline-content {
-    padding: 20px;
+    padding: 20px 25px;
+    margin: 0;
+    width: 100%;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+  }
+
+  .timeline-content::before {
+    display: none;
+  }
+
+  .timeline-content:hover {
+    transform: none;
   }
 
   .timeline-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .timeline-company {
+    font-size: 0.95rem;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
   }
 
   .certificate-card {
