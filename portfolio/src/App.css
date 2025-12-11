@@ -1859,14 +1859,16 @@ section:last-of-type {
   }
 
   .hobbies-grid {
-    padding: 25px 0;
-    gap: 20px;
+    padding: 25px 10px;
+    gap: 15px;
     scroll-snap-type: x mandatory;
   }
 
   .hobby-card {
     padding: 35px 25px;
-    min-width: calc(100% - 10px);
+    min-width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
     scroll-snap-align: center;
   }
 
@@ -2000,11 +2002,15 @@ section:last-of-type {
   }
 
   .contact-cards {
-    gap: 20px;
+    gap: 15px;
+    padding: 0 5px;
   }
 
   .contact-card {
-    min-width: calc(100% - 10px);
+    min-width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
   }
 
   .certificate-grid {
