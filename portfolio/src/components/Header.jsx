@@ -123,7 +123,7 @@ function Header() {
           <a 
             href="#contact" 
             onClick={(e) => handleNavClick(e, 'contact')}
-            className={activeSection === 'contact' ? 'active' : ''}
+            className={`nav-highlight ${activeSection === 'contact' ? 'active' : ''}`}
           >
             Contact Me
           </a>

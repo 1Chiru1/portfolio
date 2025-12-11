@@ -1,5 +1,5 @@
 const stats = [
-  { icon: "fas fa-briefcase", label: "4+ Years" },
+  { icon: "fas fa-briefcase", label: "5 Years" },
   { icon: "fas fa-award", label: "7 Certifications" },
   { icon: "fas fa-code", label: "10+ Projects" },
 ];

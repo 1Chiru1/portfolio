@@ -299,6 +299,30 @@ section:last-of-type {
   width: 100%;
 }
 
+.nav-highlight {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: #fff !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-highlight::after {
+  display: none !important;
+}
+
+.nav-highlight:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+.nav-highlight.active {
+  background: linear-gradient(135deg, #00d4ff 0%, #007bff 100%);
+  box-shadow: 0 4px 16px rgba(0, 212, 255, 0.5);
+}
+
 .header-nav-logo {
   width: 35px;
   height: 35px;
