@@ -31,7 +31,7 @@ function Header() {
       setScrollProgress(progress);
 
       // Detect active section
-      const sections = ["home", "about", "experience", "contact"];
+      const sections = ["home", "about", "experience", "hobbies", "contact"];
       let current = "home";
 
       for (const section of sections) {
@@ -97,7 +97,7 @@ function Header() {
           onClick={handleRefresh}
           title="Refresh"
         />
-        <h1 className="header-title">Chiru's Code Lab 🚀</h1>
+        <h1 className="header-title">Welcome to Chiru.dev 🖥️</h1>
         <nav className={menuOpen ? "nav-open" : ""}>
           <a 
             href="#home" 
@@ -119,6 +119,13 @@ function Header() {
             className={activeSection === 'experience' ? 'active' : ''}
           >
             Work Experience
+          </a>
+          <a 
+            href="#hobbies" 
+            onClick={(e) => handleNavClick(e, 'hobbies')}
+            className={activeSection === 'hobbies' ? 'active' : ''}
+          >
+            Hobbies
           </a>
           <a 
             href="#contact" 

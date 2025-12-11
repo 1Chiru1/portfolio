@@ -4,8 +4,8 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
+import Hobbies from "./components/Hobbies";
 import "./App.css";
-import Passion from "./components/Passion";
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -37,6 +37,7 @@ function App() {
         <Hero />
         <About />
         <Experience />
+        <Hobbies />
         <Contact />
       </main>
       {showScrollTop && (

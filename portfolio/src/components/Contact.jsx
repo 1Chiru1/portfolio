@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 const contactCards = [
   {
     icon: "fas fa-envelope",
@@ -23,9 +25,38 @@ const contactCards = [
     href: "https://github.com/1Chiru1",
     external: true,
   },
+  {
+    icon: "fas fa-phone-alt",
+    title: "Phone",
+    info: "Available on request",
+    action: "Get in touch",
+    href: "mailto:chiranjeevikashyap@gmail.com?subject=Request for Contact Number",
+    external: false,
+  },
+  {
+    icon: "fas fa-map-marker-alt",
+    title: "Location",
+    info: "India",
+    action: "View timezone",
+    href: "https://time.is/India",
+    external: true,
+  },
 ];
 
 function Contact() {
+  const scrollContainerRef = useRef(null);
+
+  const scroll = (direction) => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const scrollAmount = 350;
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const handleNavClick = (e, target) => {
     e.preventDefault();
     const element = document.getElementById(target);
@@ -48,27 +79,45 @@ function Contact() {
         or an opportunity to explore, I'd love to hear from you.
       </p>
 
-      <div className="contact-cards">
-        {contactCards.map((card, index) => (
-          <a
-            key={index}
-            href={card.href}
-            className="contact-card"
-            {...(card.external && {
-              target: "_blank",
-              rel: "noopener noreferrer",
-            })}
-          >
-            <div className="contact-icon">
-              <i className={card.icon}></i>
-            </div>
-            <h3>{card.title}</h3>
-            <p>{card.info}</p>
-            <span className="contact-action">
-              {card.action} <i className="fas fa-arrow-right"></i>
-            </span>
-          </a>
-        ))}
+      <div className="contact-cards-container">
+        <button 
+          className="contact-scroll-arrow contact-scroll-left" 
+          onClick={() => scroll('left')}
+          aria-label="Scroll left"
+        >
+          <i className="fas fa-chevron-left"></i>
+        </button>
+
+        <div className="contact-cards" ref={scrollContainerRef}>
+          {contactCards.map((card, index) => (
+            <a
+              key={index}
+              href={card.href}
+              className="contact-card"
+              {...(card.external && {
+                target: "_blank",
+                rel: "noopener noreferrer",
+              })}
+            >
+              <div className="contact-icon">
+                <i className={card.icon}></i>
+              </div>
+              <h3>{card.title}</h3>
+              <p>{card.info}</p>
+              <span className="contact-action">
+                {card.action} <i className="fas fa-arrow-right"></i>
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <button 
+          className="contact-scroll-arrow contact-scroll-right" 
+          onClick={() => scroll('right')}
+          aria-label="Scroll right"
+        >
+          <i className="fas fa-chevron-right"></i>
+        </button>
       </div>
 
       <div className="contact-navigation">
