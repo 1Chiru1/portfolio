@@ -120,6 +120,10 @@ function Contact() {
         </button>
       </div>
 
+      <p className="contact-scroll-hint">
+        ← Scroll for more →
+      </p>
+
       <div className="contact-navigation">
         <p className="nav-signature">Chiranjeevi N Kashyap</p>
         <div className="nav-links">

@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { SCROLL_THRESHOLDS, NAV_SECTIONS } from '../constants';
+import DarkModeToggle from './DarkModeToggle';
 
 function Header() {
   const [showHeader, setShowHeader] = useState(true);
@@ -13,12 +15,12 @@ function Header() {
       const currentScrollY = window.scrollY;
 
       // Handle header visibility
-      if (currentScrollY < 100) {
+      if (currentScrollY < SCROLL_THRESHOLDS.HEADER_HIDE) {
         setShowHeader(true);
         setIsTransparent(true);
       } else {
         setIsTransparent(false);
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        if (currentScrollY > lastScrollY && currentScrollY > SCROLL_THRESHOLDS.HEADER_HIDE) {
           setShowHeader(false);
         } else if (currentScrollY < lastScrollY) {
           setShowHeader(true);
@@ -31,14 +33,13 @@ function Header() {
       setScrollProgress(progress);
 
       // Detect active section
-      const sections = ["home", "about", "experience", "hobbies", "contact"];
       let current = "home";
 
-      for (const section of sections) {
+      for (const section of NAV_SECTIONS) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
+          if (rect.top <= SCROLL_THRESHOLDS.HEADER_HIDE && rect.bottom >= SCROLL_THRESHOLDS.HEADER_HIDE) {
             current = section;
             break;
           }
@@ -74,7 +75,7 @@ function Header() {
     closeMenu();
     const element = document.getElementById(target);
     if (element) {
-      const offsetTop = target === 'home' ? 0 : element.offsetTop - 60;
+      const offsetTop = target === 'home' ? 0 : element.offsetTop - SCROLL_THRESHOLDS.HEADER_OFFSET;
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
@@ -134,6 +135,9 @@ function Header() {
           >
             Contact Me
           </a>
+          <div className="theme-toggle-wrapper">
+            <DarkModeToggle />
+          </div>
         </nav>
         <button
           className={`hamburger-menu ${menuOpen ? "open" : ""}`}

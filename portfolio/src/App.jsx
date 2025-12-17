@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { SCROLL_THRESHOLDS, OBSERVER_OPTIONS } from './constants';
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -13,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > SCROLL_THRESHOLDS.SCROLL_TOP_BUTTON) {
         setShowScrollTop(true);
       } else {
         setShowScrollTop(false);
@@ -25,18 +26,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('fade-in-visible');
         }
       });
-    }, observerOptions);
+    }, OBSERVER_OPTIONS.SECTION_FADE);
 
     const sections = sectionsRef.current;
 

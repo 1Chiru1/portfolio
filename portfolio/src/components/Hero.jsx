@@ -1,53 +1,24 @@
-const stats = [
-  { icon: "fas fa-briefcase", label: "5 Years" },
-  { icon: "fas fa-award", label: "7 Certifications" },
-  { icon: "fas fa-code", label: "10+ Projects" },
-];
-
-const socialLinks = [
-  {
-    icon: "fab fa-instagram",
-    href: "https://www.instagram.com/chiranjeevi_kashyap/",
-    label: "Instagram",
-  },
-  {
-    icon: "fab fa-linkedin",
-    href: "https://www.linkedin.com/in/chiranjeevi-n/",
-    label: "LinkedIn",
-  },
-  {
-    icon: "fab fa-github",
-    href: "https://github.com/1Chiru1",
-    label: "GitHub",
-  },
-  {
-    icon: "fab fa-google",
-    href: "mailto:chiranjeevikashyap@gmail.com",
-    label: "Email",
-  },
-];
+import { heroStats, socialLinks, heroContent } from '../constants';
 
 function Hero() {
   return (
     <section id="home" className="hero-section">
       <h1 className="hero-title">
-        Hey, I'm Chiranjeevi <span className="wave">👋</span>
+        Hey, I'm {heroContent.name} <span className="wave">👋</span>
       </h1>
       <div className="hero-subtitle">
-        <i className="fas fa-laptop-code"></i> Backend Developer{" "}
+        <i className="fas fa-laptop-code"></i> {heroContent.title}{" "}
         <span className="divider">|</span>
-        <i className="fas fa-layer-group"></i> Full Stack Enthusiast
+        <i className="fas fa-layer-group"></i> {heroContent.subtitle}
       </div>
       <p className="hero-tagline">
-        Java developer who loves crafting clean code and building cool stuff! 
-        With 5 years turning ideas into reality in telecom, now exploring the 
-        exciting world of full-stack development. Let's create something amazing together! ✨
+        {heroContent.tagline}
       </p>
 
 
 
       <div className="hero-stats">
-        {stats.map((stat, index) => (
+        {heroStats.map((stat, index) => (
           <div key={index} className="stat-badge">
             <i className={stat.icon}></i>
             <span>{stat.label}</span>
@@ -60,7 +31,7 @@ function Hero() {
           <i className="fas fa-envelope"></i> Get In Touch
         </a>
         <a
-           href={`${process.env.PUBLIC_URL}/Resume.pdf`}
+           href={`${process.env.PUBLIC_URL}${heroContent.resumePath}`}
           target="_blank"
           rel="noopener noreferrer"
           className="cta-button cta-secondary"
