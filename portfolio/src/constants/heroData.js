@@ -32,6 +32,6 @@ export const heroContent = {
   name: "Chiranjeevi",
   title: "Backend Developer",
   subtitle: "Full Stack Enthusiast",
-  tagline: "Java developer who loves crafting clean code and building cool stuff! With 5 years turning ideas into reality in telecom, now exploring the exciting world of full-stack development. Let's create something amazing together! ✨",
+  tagline: "Java developer specializing in clean code and scalable solutions. With 5 years of proven success in telecom domain, now expanding expertise into full-stack development to deliver comprehensive solutions!✨",
   resumePath: "/Resume.pdf",
 };

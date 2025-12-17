@@ -2190,7 +2190,7 @@ section:last-of-type {
 
   .experience-content {
     position: relative;
-    padding: 0;
+    padding: 0 10px;
     max-width: 100%;
   }
 
@@ -2210,12 +2210,11 @@ section:last-of-type {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 0;
+    gap: 15px;
     padding: 20px calc(50% - 140px);
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
-    scroll-padding-left: calc(50% - 140px);
   }
 
   .experience-timeline::-webkit-scrollbar {
@@ -2227,7 +2226,7 @@ section:last-of-type {
     min-width: 280px;
     max-width: 280px;
     padding: 0;
-    margin: 0 auto;
+    margin: 0;
     position: relative;
     scroll-snap-align: center;
     scroll-snap-stop: always;
