@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { skills, proficiencies, techHighlights } from '../constants';
+import { skills, proficiencies, techHighlights } from "../constants";
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -78,25 +78,24 @@ function About() {
           <h3 className="role-title">
             <i className="fas fa-laptop-code"></i> Backend Developer
           </h3>
-          <p>
-            As a Java developer, I specialize in building scalable microservices
-            using <strong>Spring Boot</strong>, <strong>Neo4j</strong>,{" "}
-            <strong>PostgreSQL</strong>, and{" "}
-            <strong>Spring Security (OAuth 2.0)</strong>. I design and develop
-            robust web applications with a focus on performance and reliability.
-          </p>
-          <p>
-            I architect <strong>RESTful APIs</strong> that enable seamless data
-            flow between services, and implement real-time data processing
-            pipelines using <strong>Apache Kafka</strong> to optimize business
-            workflows and enhance system efficiency.
-          </p>
-          <p>
-            As an aspiring <strong>Full Stack Developer</strong>, I'm expanding
-            my expertise in frontend technologies including{" "}
-            <strong>HTML, CSS, JavaScript, React, and Node.js</strong> to
-            deliver complete end-to-end solutions.
-          </p>
+          <li>
+            As a backend developer in the telecommunications space, I transform complex requirements
+            into working systems. My toolkit includes <strong>Java </strong>,
+            <strong>Spring Boot</strong>, <strong>PostgreSQL</strong>, <strong>Neo4j</strong>, and{" "}
+            <strong>Kafka</strong> — technologies I use daily to build microservices that manage
+            network infrastructure and automate business workflows.
+          </li>
+          <li>
+            Whether it's designing <strong>RESTful APIs</strong> , implementing
+            <strong> event-driven architectures with Kafka</strong>, integrating external systems,
+            or implementing security with <strong>JWT</strong> and <strong>OAuth 2.0</strong>, I
+            focus on creating solutions that are both technically sound and business-impactful.
+          </li>
+          <li>
+            Beyond backend development, I'm actively building full-stack capabilities with{" "}
+            <strong>React, JavaScript, HTML/CSS, and Node.js</strong> — skills I'm applying in real
+            projects to deliver complete end-to-end solutions from database to user interface.
+          </li>
 
           <div className="tech-highlights">
             {techHighlights.map((tech, index) => (
@@ -109,11 +108,7 @@ function About() {
         </div>
       </div>
       <div className="about-actions">
-        <a
-          href="#contact"
-          rel="noopener noreferrer"
-          className="btn btn-primary"
-        >
+        <a href="#contact" rel="noopener noreferrer" className="btn btn-primary">
           CONTACT ME
         </a>
         <a
@@ -148,9 +143,7 @@ function About() {
             </div>
             <div className="proficiency-bar">
               <div
-                className={`proficiency-fill ${
-                  isProficiencyVisible ? "animate" : ""
-                }`}
+                className={`proficiency-fill ${isProficiencyVisible ? "animate" : ""}`}
                 style={{
                   width: isProficiencyVisible ? `${prof.percentage}%` : "0%",
                 }}
@@ -174,8 +167,7 @@ function About() {
             </h3>
             <p className="education-major">Mechanical Engineering</p>
             <p className="education-school">
-              <i className="fas fa-map-marker-alt"></i> ATME College of
-              Engineering
+              <i className="fas fa-map-marker-alt"></i> ATME College of Engineering
             </p>
             <p className="education-year">
               <i className="far fa-calendar-alt"></i> 2016 - 2020
@@ -187,6 +179,12 @@ function About() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="scroll-indicator">
+        <a href="#experience">
+          <i className="fas fa-chevron-down"></i>
+        </a>
       </div>
     </section>
   );

@@ -19,13 +19,29 @@ function Experience() {
                 <div className="timeline-content">
                   <h3>Java Backend Developer</h3>
                   <p className="timeline-company">
-                    <i className="fas fa-building"></i> Infosys
+                    <i className="fas fa-building"></i> Infosys (Telecom Client)
+                  </p>
+                  <p className="timeline-period">
+                    <i className="far fa-calendar-alt"></i> 2021 - Present
                   </p>
                   <p>
-                    Design and develop OSS inventory systems that enhance
-                    operational efficiency across large-scale network
-                    operations.
+                    Part of a 10-member development team building enterprise-grade microservices for network infrastructure management 
+                    using <strong>Java 17/21</strong>, <strong>Spring Boot 3.x</strong>, <strong>Maven</strong>, <strong>REST APIs</strong>, <strong>JWT Security</strong>, <strong>PostgreSQL</strong>, <strong>Kafka</strong>, and <strong>Neo4j</strong> graph database.
                   </p>
+                </div>
+              </div>
+
+              <div className="timeline-item">
+                <div className="timeline-icon">
+                  <i className="fas fa-project-diagram"></i>
+                </div>
+                <div className="timeline-content">
+                  <h3>Key Projects & Contributions</h3>
+                  <ul className="experience-highlights">
+                    <li><strong>Network Planning:</strong> Contributed to microservices for telecommunications network planning and workflow automation, implementing backend services with Spring Boot, PostgreSQL, Neo4j, and Apache Kafka for resource allocation</li>
+                    <li><strong>Inventory Visualiser:</strong> Developed backend services for 3D network equipment visualization platform, enabling real-time data synchronization across relational and graph databases for capacity analytics</li>
+                    <li><strong>Catalogue Editor:</strong> Implemented features for YANG network device model processing, managing hardware compatibility matrices and template synchronization via Git integration</li>
+                  </ul>
                 </div>
               </div>
 
@@ -34,12 +50,11 @@ function Experience() {
                   <i className="fas fa-tools"></i>
                 </div>
                 <div className="timeline-content">
-                  <h3>Infrastructure Development</h3>
+                  <h3>Technical Contributions & Integration</h3>
                   <p>
-                    Build critical infrastructure applications including Plan
-                    and Build tools, network planning systems, and catalogue
-                    template builders, ensuring seamless functionality and
-                    scalability.
+                    Designed and implemented RESTful APIs with polyglot persistence architecture combining PostgreSQL and Neo4j for complex network topology modeling. 
+                    Worked on integrating multiple external systems using synchronous REST APIs and asynchronous Kafka messaging, collaborating with 
+                    cross-functional teams for seamless workflow orchestration.
                   </p>
                 </div>
               </div>
@@ -49,12 +64,10 @@ function Experience() {
                   <i className="fas fa-users"></i>
                 </div>
                 <div className="timeline-content">
-                  <h3>Cross-Functional Collaboration</h3>
+                  <h3>Security & Authentication</h3>
                   <p>
-                    Collaborate closely with cross-functional teams to identify
-                    and resolve issues throughout the development lifecycle,
-                    from design to production deployment, ensuring stability and
-                    high-quality deliverables.
+                    Implemented JWT-based authentication, role-based access control, and Azure AD integration components for secure application access. 
+                    Supported DevOps team with application-specific configurations and troubleshooting during deployment cycles.
                   </p>
                 </div>
               </div>
@@ -64,11 +77,10 @@ function Experience() {
                   <i className="fas fa-check-circle"></i>
                 </div>
                 <div className="timeline-content">
-                  <h3>Quality Assurance</h3>
+                  <h3>Quality Assurance & Testing</h3>
                   <p>
-                    Using tools like SonarQube and JUnit, I maintain rigorous
-                    code quality standards and comprehensive test coverage to
-                    optimize application performance and reliability.
+                    Maintained rigorous code quality standards using <strong>SonarQube</strong> and <strong>JUnit 5</strong>, writing comprehensive unit and integration tests 
+                    to ensure application performance and reliability. Collaborated with leads for code reviews and adherence to enterprise coding standards.
                   </p>
                 </div>
               </div>

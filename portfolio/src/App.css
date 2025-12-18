@@ -1157,6 +1157,69 @@ section:last-of-type {
   font-size: 0.8rem;
 }
 
+/* Dark Mode Styles for Education Section */
+[data-theme="dark"] .education-item {
+  background: var(--bg-secondary);
+  border-left-color: #4c9aff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .education-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .education-item::before {
+  background: #4c9aff;
+}
+
+[data-theme="dark"] .education-icon {
+  background: var(--bg-tertiary);
+  border-right-color: var(--border-color);
+}
+
+[data-theme="dark"] .education-icon i {
+  color: #4c9aff;
+}
+
+[data-theme="dark"] .education-degree {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .education-degree i {
+  color: #4c9aff;
+}
+
+[data-theme="dark"] .education-major {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .education-school {
+  color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .education-school i {
+  color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .education-year {
+  color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .education-year i {
+  color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .highlight-badge {
+  background: rgba(76, 154, 255, 0.15);
+  color: #4c9aff;
+  border-color: rgba(76, 154, 255, 0.3);
+}
+
+[data-theme="dark"] .education-item:hover .highlight-badge {
+  background: rgba(76, 154, 255, 0.25);
+  border-color: rgba(76, 154, 255, 0.5);
+}
+
 /* Projects Section */
 .projects-grid {
   display: grid;
@@ -2095,6 +2158,13 @@ section:last-of-type {
     bottom: 20px;
   }
 
+  .about-section .scroll-indicator {
+    position: relative;
+    bottom: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
   .scroll-indicator a {
     width: 35px;
     height: 35px;
@@ -2259,7 +2329,7 @@ section:last-of-type {
   .timeline-item:active .timeline-content {
     height: auto;
     min-height: 260px;
-    max-height: 400px;
+    max-height: 600px;
     overflow-y: auto;
     box-shadow: 0 6px 30px rgba(0, 123, 255, 0.25);
     z-index: 10;
@@ -2315,7 +2385,7 @@ section:last-of-type {
     font-weight: 400;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     transition: all 0.3s ease;
   }
@@ -2325,6 +2395,36 @@ section:last-of-type {
     display: block;
     -webkit-line-clamp: unset;
     overflow: visible;
+  }
+
+  .experience-highlights {
+    text-align: left;
+    margin: 12px 0 0 0;
+    padding-left: 20px;
+    list-style-type: disc;
+    display: none;
+  }
+
+  .timeline-item:hover .experience-highlights,
+  .timeline-item:active .experience-highlights {
+    display: block;
+  }
+
+  .experience-highlights li {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #555;
+  }
+
+  .timeline-period {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
   }
 
   .certificate-card {
@@ -2761,4 +2861,127 @@ section:last-of-type {
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 6px;
+}
+
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
+
+/* Contact Section Dark Mode */
+[data-theme="dark"] .contact-section {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .contact-section h2 {
+  color: #4c9aff;
+}
+
+[data-theme="dark"] .contact-intro {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .contact-logo {
+  border-color: #4c9aff;
+  box-shadow: 0 4px 12px rgba(76, 154, 255, 0.3);
+}
+
+[data-theme="dark"] .contact-scroll-arrow {
+  color: #4c9aff;
+}
+
+[data-theme="dark"] .contact-scroll-arrow:hover {
+  color: #6eb5ff;
+}
+
+[data-theme="dark"] .contact-card {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .contact-card:hover {
+  box-shadow: 0 15px 40px rgba(76, 154, 255, 0.3);
+}
+
+[data-theme="dark"] .contact-card h3 {
+  color: #4c9aff;
+}
+
+[data-theme="dark"] .contact-card p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .contact-action {
+  color: #4c9aff;
+}
+
+/* Timeline/Experience Dark Mode */
+[data-theme="dark"] .timeline-content {
+  background: var(--bg-secondary);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .timeline-content::before {
+  border-right-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .timeline-content:hover {
+  box-shadow: 0 8px 30px rgba(76, 154, 255, 0.2);
+}
+
+[data-theme="dark"] .timeline-content h3 {
+  color: #4c9aff;
+}
+
+[data-theme="dark"] .timeline-company {
+  color: #6eb5ff;
+}
+
+[data-theme="dark"] .timeline-content p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .timeline-period {
+  color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .experience-highlights li {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .timeline-box {
+  background: var(--bg-secondary);
+}
+
+/* Certificate Cards Dark Mode */
+[data-theme="dark"] .certificate-card {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  border-color: transparent;
+}
+
+[data-theme="dark"] .certificate-card:hover {
+  box-shadow: 0 12px 30px rgba(255, 193, 7, 0.2);
+  border-color: #ffc107;
+}
+
+[data-theme="dark"] .certificate-details h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .certificate-issuer {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .certificate-view {
+  color: #ffc107;
+}
+
+[data-theme="dark"] .certifications-section .Heading h2 {
+  color: #4c9aff;
+}
+
+[data-theme="dark"] .certifications-section {
+  border-top-color: var(--border-color);
 }
