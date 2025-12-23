@@ -18,7 +18,7 @@ export const skills = [
   { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
   { name: "Git", icon: "devicon-git-plain colored" },
   { name: "Jira", icon: "devicon-jira-plain colored" },
-  { name: "Amazon Q", icon: "fas fa-cloud" },
+  { name: "Gen AI-Amazon Q", icon: "fas fa-robot" },
 ];
 
 export const proficiencies = [
